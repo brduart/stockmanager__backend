@@ -8,7 +8,7 @@ const router = Router();
 router.get("/product/:id", protectedRoute, getProductById);
 router.get("/products", protectedRoute, getAllProducts);
 router.post("/product", protectedRoute, upload.single("image"), createProduct);
-router.put("/product/:id", protectedRoute, updateProduct);
+router.put("/product/:id", protectedRoute, upload.single("image"), updateProduct);
 router.delete("/product/:id", protectedRoute, deleteProductById);
 
 export default router;
